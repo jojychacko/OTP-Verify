@@ -1,0 +1,23 @@
+.login {
+
+  width: 400px;
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;  
+}  
+.main-a{
+display: flex;
+justify-content: center;  
+}  
+h3{
+font-size: 25px;
+font-weight: bold;
+text-align: center;
+color:#f44336;}
+p{
+font-size: 15px;
+font-weight:200;
+}  

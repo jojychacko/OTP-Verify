@@ -1,0 +1,29 @@
+<div class="main">
+    <mat-card class="login">
+
+      <h3>Sign Up</h3><br>
+      <P>Enter OTP.</P><br>
+
+      <mat-card-content>
+
+        <div class="container main-a">
+            <form [formGroup]="OTPForm" (ngSubmit)="onSubmit()" novalidate>
+
+                <div class="form-group">
+                    
+                    <mat-form-field appearance="fill">
+                        <input matInput placeholder="OTP" formControlName="phone">
+                    </mat-form-field>
+                
+                    <div class="main-a">
+                        <button mat-raised-button color="warn">Submit</button>
+                    </div>    
+                
+                </div> 
+
+            </form>
+        </div>
+
+      </mat-card-content>   
+    </mat-card>
+</div>

@@ -1,0 +1,50 @@
+
+<mat-form-field>
+  <mat-label>Filter Product</mat-label>
+    <input matInput type="text" (keyup)="applyFilter($event)" placeholder="Search by product">
+</mat-form-field>
+
+<table mat-table [dataSource]="details" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="sn">
+       <th mat-header-cell *matHeaderCellDef> Sl no. </th>
+       <td mat-cell *matCellDef="let element; let i = index;"> {{i+1}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="minorder">
+        <th mat-header-cell *matHeaderCellDef> Max Order Qty </th>
+        <td mat-cell *matCellDef="let element"> {{element.min_order_quantity}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="maxorder">
+        <th mat-header-cell *matHeaderCellDef> Min Order Qty </th>
+        <td mat-cell *matCellDef="let element"> {{element.max_order_quantity}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef> Price(₹) </th>
+        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              (page)="pageEvent = $event"
+              (click)="index($event)"
+              >
+</mat-paginator>
+
+    
